@@ -1,0 +1,28 @@
+{
+	"folders": [
+		{
+			"path": "../../NMQ_Buoi7-Multimedia/android"
+		},
+		{
+			"path": "../../NMQ_Buoi7-Multimedia/build"
+		},
+		{
+			"path": "../../NMQ_Buoi7-Multimedia/ios"
+		},
+		{
+			"path": "../../NMQ_Buoi7-Multimedia/lib"
+		},
+		{
+			"path": "../../NMQ_Buoi7-Multimedia/linux"
+		},
+		{
+			"path": "../../NMQ_Buoi7-Multimedia/macos"
+		},
+		{
+			"path": "../../NMQ_Buoi7-Multimedia/web"
+		},
+		{
+			"path": "../../NMQ_Buoi7-Multimedia/windows"
+		}
+	]
+}
