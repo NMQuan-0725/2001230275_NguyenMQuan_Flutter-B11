@@ -10,9 +10,6 @@ class Cau2_HomeTab extends StatefulWidget {
 
 class _Cau2_HomeTabState extends State<Cau2_HomeTab> {
   final _supabase = Supabase.instance.client;
-
-  // This would ideally be passed from your Login process or retrieved from a global state
-  // For now, replace 'SV001' with your test ID or a value stored during login
   final String _currentStudentId = 'SV001';
 
   Future<Map<String, dynamic>> _fetchStudentData() async {
