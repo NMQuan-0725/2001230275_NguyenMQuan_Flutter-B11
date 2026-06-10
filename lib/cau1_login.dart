@@ -16,9 +16,9 @@ class _LoginScreenState extends State<LoginScreen> {
     setState(() => _isLoading = true);
     try {
       final data = await _supabase
-          .from('SinhVien')
+          .from('sinhvien')
           .select()
-          .eq('MaSV', _studentIdController.text.trim())
+          .eq('masv', _studentIdController.text.trim())
           .maybeSingle();
 
       if (data != null) {

@@ -24,8 +24,8 @@ class _Cau2GradeTabState extends State<Cau2GradeTab> {
     return Scaffold(
       appBar: AppBar(title: Text("Bảng Điểm")),
       body: FutureBuilder(
-        // Replace 'KetQua' with your actual table name
-        future: _supabase.from('KetQua').select('*, MonHoc(ten_mon)'),
+        // Replace 'ketqua' with your actual table name
+        future: _supabase.from('ketqua').select('*, monhoc(ten_mon)'),
         builder: (context, snapshot) {
           if (!snapshot.hasData) {
             return const Center(child: CircularProgressIndicator());
@@ -40,7 +40,7 @@ class _Cau2GradeTabState extends State<Cau2GradeTab> {
                   .toDouble(); // Robust handling [cite: 110]
 
               return ListTile(
-                title: Text(item['MonHoc']['ten_mon']),
+                title: Text(item['monhoc']['ten_mon']),
                 subtitle: Text("Điểm: $score - ${getGradeLabel(score)}"),
               );
             },

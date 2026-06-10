@@ -34,13 +34,13 @@ class _Cau4MapsState extends State<Cau4Maps> {
     // 2. Fetch "NhaRieng" coordinates from Supabase
     try {
       final data = await _supabase
-          .from('SinhVien')
-          .select('NhaRieng_Lat, NhaRieng_Lng')
-          .eq('MaSV', widget.studentId)
+          .from('sinhvien')
+          .select('nharieng_lat, nharieng_lng')
+          .eq('masv', widget.studentId)
           .single();
 
-      final lat = data['NhaRieng_Lat'] as double;
-      final lng = data['NhaRieng_Lng'] as double;
+      final lat = (data['nharieng_lat'] as num).toDouble();
+      final lng = (data['nharieng_lng'] as num).toDouble();
 
       setState(() {
         _markers.add(

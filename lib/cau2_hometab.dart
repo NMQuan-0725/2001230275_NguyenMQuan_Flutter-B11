@@ -14,9 +14,9 @@ class _Cau2HomeTabState extends State<Cau2HomeTab> {
 
   Future<Map<String, dynamic>> _fetchStudentData() async {
     return await _supabase
-        .from('SinhVien')
+        .from('sinhvien')
         .select()
-        .eq('MaSV', _currentStudentId)
+        .eq('masv', _currentStudentId)
         .single();
   }
 
@@ -44,17 +44,17 @@ class _Cau2HomeTabState extends State<Cau2HomeTab> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Họ tên: ${student['HoTen']}",
+                  "Họ tên: ${student['hoten']}",
                   style: const TextStyle(fontSize: 18),
                 ),
                 const SizedBox(height: 10),
                 Text(
-                  "Lớp: ${student['Lop']}",
+                  "Lớp: ${student['lop']}",
                   style: const TextStyle(fontSize: 18),
                 ),
                 const SizedBox(height: 10),
                 Text(
-                  "Chuyên ngành: ${student['ChuyenNganh']}",
+                  "Chuyên ngành: ${student['chuyennganh']}",
                   style: const TextStyle(fontSize: 18),
                 ),
               ],

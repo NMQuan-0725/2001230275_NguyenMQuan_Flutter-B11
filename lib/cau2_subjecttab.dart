@@ -18,18 +18,18 @@ class _Cau2SubjectTabState extends State<Cau2SubjectTab> {
     int credits,
     String room,
   ) async {
-    await _supabase.from('MonHoc').insert({
-      'MaMonHoc': code,
-      'TenMonHoc': name,
-      'SoTinChi': credits,
-      'PhongHoc': room,
+    await _supabase.from('monhoc').insert({
+      'mamonhoc': code,
+      'tenmonhoc': name,
+      'sotinchi': credits,
+      'phonghoc': room,
     });
     setState(() {}); // Refresh list
   }
 
   // Method to Delete a subject
   Future<void> _deleteSubject(String code) async {
-    await _supabase.from('MonHoc').delete().eq('MaMonHoc', code);
+    await _supabase.from('monhoc').delete().eq('mamonhoc', code);
     setState(() {}); // Refresh list
   }
 
@@ -82,7 +82,7 @@ class _Cau2SubjectTabState extends State<Cau2SubjectTab> {
     return Scaffold(
       appBar: AppBar(title: const Text("Quản lý môn học")),
       body: FutureBuilder<List<Map<String, dynamic>>>(
-        future: _supabase.from('MonHoc').select(),
+        future: _supabase.from('monhoc').select(),
         builder: (context, snapshot) {
           if (!snapshot.hasData) {
             return const Center(child: CircularProgressIndicator());
@@ -94,10 +94,10 @@ class _Cau2SubjectTabState extends State<Cau2SubjectTab> {
             itemBuilder: (context, index) {
               final sub = subjects[index];
               return ListTile(
-                title: Text(sub['TenMonHoc']),
+                title: Text(sub['tenmonhoc']),
                 trailing: IconButton(
                   icon: const Icon(Icons.delete, color: Colors.red),
-                  onPressed: () => _deleteSubject(sub['MaMonHoc']),
+                  onPressed: () => _deleteSubject(sub['mamonhoc']),
                 ),
               );
             },
