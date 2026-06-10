@@ -16,8 +16,9 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 
-    kotlinOptions {
-        jvmTarget = "17"
+    // Configure Kotlin JVM toolchain to avoid deprecated jvmTarget usage
+    kotlin {
+        jvmToolchain(17)
     }
 
     defaultConfig {
@@ -27,8 +28,13 @@ android {
         // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
-        versionCode = flutterVersionCode.toInt()
-        versionName = flutterVersionName
+
+        // Retrieve Flutter-provided version properties safely (Kotlin DSL)
+        val flutterVersionCodeProp = project.findProperty("flutterVersionCode") as String?
+        val flutterVersionNameProp = project.findProperty("flutterVersionName") as String?
+
+        versionCode = (flutterVersionCodeProp ?: "1").toInt()
+        versionName = flutterVersionNameProp ?: "1.0"
         multiDexEnabled = true
     }
 

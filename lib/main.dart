@@ -6,7 +6,7 @@ import 'cau3_thongbao.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Supabase.initialize(
-    url: 'https://wkyqbkrvglhfzhxvdyhy.supabase.com',
+    url: 'https://wkyqbkrvglhfzhxvdyhy.supabase.co',
     publishableKey:
         'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndreXFia3J2Z2xoZnpoeHZkeWh5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA3NzczMjAsImV4cCI6MjA5NjM1MzMyMH0.L-EnQDNKHjbpPKPn_hl735iswez4q54uEbdc0C4v5q0',
   );
