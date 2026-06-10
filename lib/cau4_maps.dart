@@ -3,15 +3,15 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
-class Cau4_Maps extends StatefulWidget {
+class Cau4Maps extends StatefulWidget {
   final String studentId; // Pass the ID from your login
-  const Cau4_Maps({super.key, required this.studentId});
+  const Cau4Maps({super.key, required this.studentId});
 
   @override
-  State<Cau4_Maps> createState() => _Cau4_MapsState();
+  State<Cau4Maps> createState() => _Cau4MapsState();
 }
 
-class _Cau4_MapsState extends State<Cau4_Maps> {
+class _Cau4MapsState extends State<Cau4Maps> {
   late GoogleMapController mapController;
   final Set<Marker> _markers = {};
   String _distanceResult = "Loading your home location...";
@@ -112,7 +112,7 @@ class _Cau4_MapsState extends State<Cau4_Maps> {
             right: 20,
             child: Container(
               padding: const EdgeInsets.all(16),
-              color: Colors.white.withOpacity(0.9),
+              color: const Color.fromRGBO(255, 255, 255, 0.9),
               child: Text(
                 _distanceResult,
                 style: const TextStyle(fontWeight: FontWeight.bold),

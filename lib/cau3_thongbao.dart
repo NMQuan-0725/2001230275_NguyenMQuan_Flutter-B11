@@ -15,7 +15,7 @@ class NotificationService {
         InitializationSettings(android: androidSettings);
 
     await _notificationsPlugin.initialize(
-      settings: initializationSettings,
+      initializationSettings,
       onDidReceiveNotificationResponse: (NotificationResponse response) {},
     );
   }
@@ -35,10 +35,10 @@ class NotificationService {
 
     // Modernized Show Method (positional NotificationDetails)
     await _notificationsPlugin.show(
-      id: 0,
-      title: 'Sinh viên chú ý',
-      body: 'Đã đến giờ vào lớp môn $className!',
-      notificationDetails: const NotificationDetails(android: androidDetails),
+      0,
+      'Sinh viên chú ý',
+      'Đã đến giờ vào lớp môn $className!',
+      const NotificationDetails(android: androidDetails),
     );
   }
 }

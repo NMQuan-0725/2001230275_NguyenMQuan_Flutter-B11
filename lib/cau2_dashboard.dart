@@ -3,21 +3,21 @@ import 'cau2_hometab.dart';
 import 'cau2_subjecttab.dart';
 import 'cau2_gradetab.dart';
 
-class Cau2_Dashboard extends StatefulWidget {
-  const Cau2_Dashboard({super.key});
+class Cau2Dashboard extends StatefulWidget {
+  const Cau2Dashboard({super.key});
 
   @override
-  State<Cau2_Dashboard> createState() => _Cau2_DashboardState();
+  State<Cau2Dashboard> createState() => _Cau2DashboardState();
 }
 
-class _Cau2_DashboardState extends State<Cau2_Dashboard> {
+class _Cau2DashboardState extends State<Cau2Dashboard> {
   int _selectedIndex = 0;
 
-  final List<Widget> _pages = [
-    const Cau2_HomeTab(),
-    const Cau2_SubjectTab(),
-    const Cau2_GradeTab(),
-  ];
+    final List<Widget> _pages = [
+      const Cau2HomeTab(),
+      const Cau2SubjectTab(),
+      const Cau2GradeTab(),
+    ];
 
   @override
   Widget build(BuildContext context) {

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
-class Cau2_HomeTab extends StatefulWidget {
-  const Cau2_HomeTab({super.key});
+class Cau2HomeTab extends StatefulWidget {
+  const Cau2HomeTab({super.key});
 
   @override
-  State<Cau2_HomeTab> createState() => _Cau2_HomeTabState();
+  State<Cau2HomeTab> createState() => _Cau2HomeTabState();
 }
 
-class _Cau2_HomeTabState extends State<Cau2_HomeTab> {
+class _Cau2HomeTabState extends State<Cau2HomeTab> {
   final _supabase = Supabase.instance.client;
   final String _currentStudentId = 'SV001';
 

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
-class Cau2_GradeTab extends StatefulWidget {
-  const Cau2_GradeTab({super.key});
+class Cau2GradeTab extends StatefulWidget {
+  const Cau2GradeTab({super.key});
 
   @override
-  _Cau2_GradeTabState createState() => _Cau2_GradeTabState();
+  State<Cau2GradeTab> createState() => _Cau2GradeTabState();
 }
 
-class _Cau2_GradeTabState extends State<Cau2_GradeTab> {
+class _Cau2GradeTabState extends State<Cau2GradeTab> {
   final _supabase = Supabase.instance.client;
 
   // Vietnamese Grading Logic [cite: 104]
@@ -27,8 +27,9 @@ class _Cau2_GradeTabState extends State<Cau2_GradeTab> {
         // Replace 'KetQua' with your actual table name
         future: _supabase.from('KetQua').select('*, MonHoc(ten_mon)'),
         builder: (context, snapshot) {
-          if (!snapshot.hasData)
-            return Center(child: CircularProgressIndicator());
+          if (!snapshot.hasData) {
+            return const Center(child: CircularProgressIndicator());
+          }
           final data = snapshot.data as List<dynamic>;
 
           return ListView.builder(

@@ -22,14 +22,17 @@ class _LoginScreenState extends State<LoginScreen> {
           .maybeSingle();
 
       if (data != null) {
+        if (!mounted) return;
         Navigator.pushReplacementNamed(context, '/dashboard');
       }
     } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Ma sinh vien khong hop le, vui long kiem tra lai!'),
-        ),
-      );
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Ma sinh vien khong hop le, vui long kiem tra lai!'),
+          ),
+        );
+      }
     } finally {
       setState(() => _isLoading = false);
     }

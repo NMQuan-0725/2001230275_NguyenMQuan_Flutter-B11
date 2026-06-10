@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
-class Cau2_SubjectTab extends StatefulWidget {
-  const Cau2_SubjectTab({super.key});
+class Cau2SubjectTab extends StatefulWidget {
+  const Cau2SubjectTab({super.key});
 
   @override
-  State<Cau2_SubjectTab> createState() => _Cau2_SubjectTabState();
+  State<Cau2SubjectTab> createState() => _Cau2SubjectTabState();
 }
 
-class _Cau2_SubjectTabState extends State<Cau2_SubjectTab> {
+class _Cau2SubjectTabState extends State<Cau2SubjectTab> {
   final _supabase = Supabase.instance.client;
 
   // Method to Add a subject
@@ -84,8 +84,9 @@ class _Cau2_SubjectTabState extends State<Cau2_SubjectTab> {
       body: FutureBuilder<List<Map<String, dynamic>>>(
         future: _supabase.from('MonHoc').select(),
         builder: (context, snapshot) {
-          if (!snapshot.hasData)
+          if (!snapshot.hasData) {
             return const Center(child: CircularProgressIndicator());
+          }
 
           final subjects = snapshot.data!;
           return ListView.builder(
